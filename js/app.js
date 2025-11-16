@@ -208,7 +208,7 @@ window.NodicaApp = NodicaApp;
         const modalContent = `
             <div class="flex flex-col md:flex-row gap-8">
                 <div class="w-full md:w-5/12 flex-shrink-0">
-                    <img src="${solution.modal.image}" alt="${solution.title}" class="w-full h-64 md:h-full object-cover rounded-lg shadow-md">
+                     <img src="${solution.modal.image}" alt="${solution.title}" class="w-full h-64 md:h-full object-cover rounded-lg shadow-md">
                 </div>
                 <div class="w-full md:w-7/12">
                     <p class="text-gray-700 text-base mb-6">${solution.modal.description}</p>
