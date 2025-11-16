@@ -32,8 +32,8 @@ export const Header = () => {
         <header id="main-header" class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md">
             <div class="container mx-auto px-6 py-4">
                 <div class="flex items-center justify-between">
-                    <a href="#/home" class="text-2xl font-bold font-heading text-nodica-dark-blue">
-                        Nodica
+                    <a href="#/home">
+                        <img src="https://nodica.pro/logo-nodica-web.png" alt="Nodica Logo" class="h-10">
                     </a>
                     <nav class="hidden md:flex items-center space-x-8">
                         ${navItems.map(item => `

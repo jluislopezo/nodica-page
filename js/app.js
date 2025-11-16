@@ -186,7 +186,7 @@ window.NodicaApp = NodicaApp;
             text: 'Quiero una Demo',
             variant: 'primary',
             className: 'w-full',
-            onClick: 'NodicaApp.closeModal(); NodicaApp.openDemoModal();'
+            onClick: 'NodicaApp.openDemoModal()'
         });
 
         const modalId = `service-modal-${service.id}`;
@@ -201,8 +201,21 @@ window.NodicaApp = NodicaApp;
     };
     
     app.openDemoModal = () => {
-        renderDemoModal();
-        openModal('demo-modal');
+        const modalContainer = document.getElementById('modal-container');
+        const existingModal = modalContainer.querySelector('.fixed');
+
+        const showDemoModal = () => {
+            renderDemoModal();
+            openModal('demo-modal');
+        };
+
+        if (existingModal) {
+            // Close the current modal first, then open the demo modal after the animation.
+            app.closeModal();
+            setTimeout(showDemoModal, 310); // Wait for close animation (300ms) + buffer
+        } else {
+            showDemoModal();
+        }
     };
 
     app.closeModal = () => {
