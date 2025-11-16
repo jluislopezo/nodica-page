@@ -1,4 +1,5 @@
 
+
 import { NodicaStore } from './store.js';
 import { NodicaRouter } from './router.js';
 import { NodicaAIService } from './services/aiService.js';
@@ -200,6 +201,55 @@ window.NodicaApp = NodicaApp;
         openModal(modalId);
     };
     
+    app.openSolutionModal = (solutionId) => {
+        const solution = NodicaStore.getSolutionById(solutionId);
+        if (!solution) return;
+
+        const modalContent = `
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="w-full md:w-5/12 flex-shrink-0">
+                    <img src="${solution.modal.image}" alt="${solution.title}" class="w-full h-auto object-cover rounded-lg shadow-md">
+                </div>
+                <div class="w-full md:w-7/12">
+                    <p class="text-gray-700 text-base mb-6">${solution.modal.description}</p>
+                    
+                    <h4 class="font-bold text-gray-800 text-lg mb-2">El Desafío</h4>
+                    <p class="text-gray-600 mb-6">${solution.modal.challenge}</p>
+
+                    <h4 class="font-bold text-gray-800 text-lg mb-2">La Solución Nodica</h4>
+                    <div class="text-sm text-gray-700 whitespace-pre-line bg-nodica-gray p-4 rounded-lg">${solution.modal.solution}</div>
+                </div>
+            </div>
+        `;
+
+        const modalFooter = Button({
+            text: 'Lo quiero',
+            variant: 'primary',
+            className: 'w-full',
+            onClick: 'NodicaApp.openDemoModal()'
+        });
+        
+        const modalId = `solution-modal-${solution.id}`;
+        const modalTitle = `
+            <div class="flex items-center">
+                <div class="bg-nodica-gray p-2 rounded-full mr-3">
+                   ${solution.icon}
+                </div>
+                <span>${solution.title}</span>
+            </div>
+        `;
+
+        document.getElementById('modal-container').innerHTML = Modal({
+            id: modalId,
+            title: modalTitle,
+            content: modalContent,
+            footer: modalFooter,
+            size: '4xl'
+        });
+        
+        openModal(modalId);
+    };
+
     app.openDemoModal = () => {
         const modalContainer = document.getElementById('modal-container');
         const existingModal = modalContainer.querySelector('.fixed');

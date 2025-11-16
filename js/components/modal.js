@@ -1,8 +1,17 @@
 
-export const Modal = ({ id, title, content, footer }) => {
+
+export const Modal = ({ id, title, content, footer, size = 'lg' }) => {
+    const sizeClasses = {
+        'lg': 'max-w-lg',
+        'xl': 'max-w-xl',
+        '2xl': 'max-w-2xl',
+        '3xl': 'max-w-3xl',
+        '4xl': 'max-w-4xl',
+    };
+
     return `
         <div id="${id}" class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden" onclick="if (event.target.id === '${id}') NodicaApp.closeModal();">
-            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] flex flex-col transform transition-transform duration-300 scale-95">
+            <div class="bg-white rounded-2xl shadow-2xl w-full ${sizeClasses[size] || 'max-w-lg'} max-h-[90vh] flex flex-col transform transition-transform duration-300 scale-95">
                 <header class="flex items-center justify-between p-5 border-b border-gray-200 rounded-t-2xl">
                     <h3 class="text-xl font-bold font-heading text-gray-800">${title}</h3>
                     <button onclick="NodicaApp.closeModal()" class="text-gray-400 hover:text-gray-800 transition-colors">

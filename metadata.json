@@ -1,5 +1,5 @@
 {
-  "name": "Nodica - Automatización y Apps Inteligentes",
+  "name": "OK - Nodica Web - Automatización y Apps Inteligentes",
   "description": "A single-page application for Nodica, a modern consultancy specializing in business automation, application development, and AI solutions for SMEs. Built with pure HTML, CSS (Tailwind CDN), and JavaScript, without any frameworks or build tools, ensuring compatibility with any shared hosting.",
   "requestFramePermissions": []
 }
