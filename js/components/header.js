@@ -1,4 +1,3 @@
-
 import { Button } from './button.js';
 
 export const Header = () => {
@@ -33,7 +32,7 @@ export const Header = () => {
             <div class="container mx-auto px-6 py-4">
                 <div class="flex items-center justify-between">
                     <a href="#/home">
-                        <img src="https://nodica.pro/logo-nodica-web.png" alt="Nodica Logo" class="h-10">
+                        <img src="https://nodica.pro/logo-nodica-web.png" alt="Nodica Logo" class="h-12 w-auto">
                     </a>
                     <nav class="hidden md:flex items-center space-x-8">
                         ${navItems.map(item => `
