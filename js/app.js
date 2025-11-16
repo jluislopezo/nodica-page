@@ -167,11 +167,13 @@ window.NodicaApp = NodicaApp;
         const service = NodicaStore.getServiceById(serviceId);
         if (!service) return;
 
+        const detailsList = service.detailsList || [];
+
         const modalContent = `
             <img src="${service.image}" alt="${service.title}" class="w-full h-48 object-cover rounded-t-lg mb-4">
             <p class="text-gray-600 mb-4">${service.details}</p>
             <ul class="space-y-2">
-                ${service.detailsList.map(item => `
+                ${detailsList.map(item => `
                     <li class="flex items-start">
                         <span class="text-nodica-blue mr-2 mt-1">✓</span>
                         <span>${item}</span>
