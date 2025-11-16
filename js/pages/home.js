@@ -39,7 +39,23 @@ export const HomePage = () => {
             </div>
         </div>
 
-        <section id="solutions-section" class="py-20 bg-white">
+        <section id="services-section" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animated-section">
+                    <h2 class="text-3xl md:text-4xl font-bold font-heading">Capacidades Principales</h2>
+                    <p class="text-gray-600 mt-2">Nuestras tres áreas de especialización para impulsar tu negocio.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    ${services.map((service, index) => `
+                        <div class="animated-section" style="transition-delay: ${index * 0.1}s;">
+                            ${ServiceCard({ service })}
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        </section>
+
+        <section id="solutions-section" class="py-20 bg-nodica-gray">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 animated-section">
                     <h2 class="text-3xl md:text-4xl font-bold font-heading">Nuestras Soluciones Clave</h2>
@@ -57,22 +73,6 @@ export const HomePage = () => {
                         </div>
                     </div>
                 `).join('')}
-            </div>
-        </section>
-
-        <section id="services-section" class="py-20 bg-nodica-gray">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12 animated-section">
-                    <h2 class="text-3xl md:text-4xl font-bold font-heading">Capacidades Principales</h2>
-                    <p class="text-gray-600 mt-2">Nuestras tres áreas de especialización para impulsar tu negocio.</p>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    ${services.map((service, index) => `
-                        <div class="animated-section" style="transition-delay: ${index * 0.1}s;">
-                            ${ServiceCard({ service })}
-                        </div>
-                    `).join('')}
-                </div>
             </div>
         </section>
 
