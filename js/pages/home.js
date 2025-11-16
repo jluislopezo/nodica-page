@@ -1,4 +1,5 @@
 
+
 import { NodicaStore } from '../store.js';
 import { Button } from '../components/button.js';
 import { ServiceCard } from '../components/serviceCard.js';
@@ -7,8 +8,8 @@ export const HomePage = () => {
     const services = NodicaStore.getServices();
     const solutions = NodicaStore.getSolutions();
     const testimonials = [
-        { name: 'Lucía Mendoza', company: 'CEO de CreceMás', quote: 'Nodica transformó nuestra operación. La automatización de facturas nos ahorró 20 horas a la semana.', avatar: 'https://i.pravatar.cc/150?img=1' },
-        { name: 'Javier Ríos', company: 'Director de Logística', quote: 'La app a medida que desarrollaron es el núcleo de nuestra logística. Intuitiva, rápida y fiable.', avatar: 'https://i.pravatar.cc/150?img=3' }
+        { name: 'Lucía Mendoza', company: 'CEO de CreceMás', quote: 'Nodica transformó nuestra operación. La automatización de facturas nos ahorró 20 horas a la semana.', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&q=80&fm=jpg&crop=face&cs=tinysrgb&w=150&h=150&fit=crop' },
+        { name: 'Javier Ríos', company: 'Director de Logística', quote: 'La app a medida que desarrollaron es el núcleo de nuestra logística. Intuitiva, rápida y fiable.', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&q=80&fm=jpg&crop=face&cs=tinysrgb&w=150&h=150&fit=crop' }
     ];
 
     const solutionsByCategory = solutions.reduce((acc, solution) => {
@@ -17,14 +18,17 @@ export const HomePage = () => {
     }, {});
 
     const SolutionCard = (solution) => `
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col" onclick="NodicaApp.openSolutionModal(${solution.id})">
-            <div class="flex items-center mb-4">
-                <div class="bg-nodica-gray p-3 rounded-full mr-4">
-                   ${solution.icon}
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col overflow-hidden" onclick="NodicaApp.openSolutionModal(${solution.id})">
+            <img src="${solution.cardImage}" alt="${solution.title}" class="w-full h-32 object-cover">
+            <div class="p-6 flex flex-col flex-grow">
+                <div class="flex items-center mb-4">
+                    <div class="bg-nodica-gray p-3 rounded-full mr-4 flex-shrink-0">
+                       ${solution.icon}
+                    </div>
+                    <h3 class="text-md font-bold font-heading text-gray-900 flex-1">${solution.title}</h3>
                 </div>
-                <h3 class="text-md font-bold font-heading text-gray-900 flex-1">${solution.title}</h3>
+                <p class="text-gray-600 font-body text-sm flex-grow">${solution.description}</p>
             </div>
-            <p class="text-gray-600 font-body text-sm flex-grow">${solution.description}</p>
         </div>
     `;
 
@@ -112,7 +116,7 @@ export const HomePage = () => {
                         <div class="bg-white p-8 rounded-lg shadow-lg animated-section" style="transition-delay: ${index * 0.2}s;">
                             <p class="text-gray-600 italic mb-4">"${t.quote}"</p>
                             <div class="flex items-center">
-                                <img src="${t.avatar}" class="w-12 h-12 rounded-full mr-4" alt="${t.name}">
+                                <img src="${t.avatar}" class="w-12 h-12 rounded-full mr-4 object-cover" alt="${t.name}">
                                 <div>
                                     <p class="font-bold">${t.name}</p>
                                     <p class="text-sm text-gray-500">${t.company}</p>
