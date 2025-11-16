@@ -1,0 +1,23 @@
+
+export const Modal = ({ id, title, content, footer }) => {
+    return `
+        <div id="${id}" class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden" onclick="if (event.target.id === '${id}') NodicaApp.closeModal();">
+            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] flex flex-col transform transition-transform duration-300 scale-95">
+                <header class="flex items-center justify-between p-5 border-b border-gray-200 rounded-t-2xl">
+                    <h3 class="text-xl font-bold font-heading text-gray-800">${title}</h3>
+                    <button onclick="NodicaApp.closeModal()" class="text-gray-400 hover:text-gray-800 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </header>
+                <main class="p-6 overflow-y-auto flex-grow">
+                    ${content}
+                </main>
+                ${footer ? `
+                <footer class="p-5 border-t border-gray-200 rounded-b-2xl">
+                    ${footer}
+                </footer>
+                ` : ''}
+            </div>
+        </div>
+    `;
+};
