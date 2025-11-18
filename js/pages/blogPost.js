@@ -6,12 +6,17 @@ export const BlogPostPage = (params) => {
     const post = NodicaStore.getPostById(postId);
 
     if (!post) {
-        return `
-            <div class="pt-32 text-center">
+        const content = `
+            <div class="pt-32 text-center container mx-auto px-6 py-16">
                 <h1 class="text-4xl font-bold">${i18n.t('blogPostPage.notFound')}</h1>
                 <p class="mt-4"><a href="#/blog" class="text-nodica-blue hover:underline">${i18n.t('blogPostPage.backToBlog')}</a></p>
             </div>
         `;
+        return {
+            content: content,
+            title: i18n.t('blogPostPage.notFound'),
+            description: i18n.t('blogPostPage.notFoundDesc')
+        };
     }
 
     const locale = i18n.getLang(); // 'es' or 'en'
@@ -21,7 +26,7 @@ export const BlogPostPage = (params) => {
         day: 'numeric'
     });
 
-    return `
+    const pageContent = `
         <article class="pt-24 bg-background">
             <header class="container mx-auto px-6 py-12 text-center">
                 <h1 class="text-4xl md:text-5xl font-bold font-heading text-foreground mb-4 animated-section">${post.title}</h1>
@@ -41,4 +46,10 @@ export const BlogPostPage = (params) => {
             </div>
         </article>
     `;
+
+    return {
+        content: pageContent,
+        title: `${post.title} | Nodica Blog`,
+        description: post.excerpt
+    };
 };

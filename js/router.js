@@ -18,6 +18,16 @@ const dynamicRoutes = [
 ];
 
 let currentPageKey = null;
+const defaultTitle = 'Nodica - Automatización y Apps Inteligentes';
+const defaultDescription = 'Ayudamos a las PYMEs a alcanzar su máximo potencial con soluciones tecnológicas inteligentes y a medida. Automatización, Desarrollo de Apps e IA.';
+
+function updateMetaTags(title = defaultTitle, description = defaultDescription) {
+    document.title = title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+        metaDesc.setAttribute('content', description);
+    }
+}
 
 function handleScroll(sectionId) {
     // Use a short timeout to ensure the DOM has been painted
@@ -76,13 +86,22 @@ function renderPage() {
 
     // 4. Render the page content or 404
     if (handler) {
-        contentEl.innerHTML = handler(params);
+        const pageData = handler(params);
+        // Handle pages that return an object with content and meta tags
+        if (typeof pageData === 'object' && pageData.content) {
+            contentEl.innerHTML = pageData.content;
+            updateMetaTags(pageData.title, pageData.description);
+        } else { // Handle pages that return only HTML
+            contentEl.innerHTML = pageData;
+            updateMetaTags(); // Reset to default meta tags
+        }
     } else {
         contentEl.innerHTML = `<div class="text-center py-40">
             <h1 class="text-4xl font-bold">404 - Página no encontrada</h1>
             <a href="#/home" class="text-nodica-blue mt-4 inline-block">Volver al inicio</a>
         </div>`;
         pageKey = '404'; // Assign a key for 404 state
+        updateMetaTags('404 - Página no encontrada');
     }
     
     // 5. Update state and side effects

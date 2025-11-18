@@ -57,6 +57,7 @@ const translations = {
             publishedBy: 'Publicado por',
             on: 'el',
             notFound: 'Post no encontrado',
+            notFoundDesc: 'El post que buscas no existe o fue movido.',
             backToBlog: 'Volver al blog',
             backToAll: 'Volver a todos los posts',
         },
@@ -90,6 +91,30 @@ const translations = {
         },
         common: {
             readMore: 'Leer más',
+        },
+        legal: {
+            privacy: {
+                title: 'Política de Privacidad',
+                content: `
+                    <p class="mb-4">En Nodica, tu privacidad es importante para nosotros. Esta política explica qué información personal recopilamos y cómo la usamos.</p>
+                    <h4 class="font-bold text-lg mb-2">1. Información que Recopilamos</h4>
+                    <p class="mb-4">Recopilamos información que nos proporcionas directamente, como tu nombre y dirección de correo electrónico cuando solicitas una demo. También podemos recopilar datos técnicos automáticamente, como tu dirección IP.</p>
+                    <h4 class="font-bold text-lg mb-2">2. Cómo Usamos tu Información</h4>
+                    <p class="mb-4">Utilizamos tu información para ponernos en contacto contigo, proporcionarte nuestros servicios y mejorar nuestra oferta. No compartimos tu información personal con terceros con fines de marketing.</p>
+                    <p><em>Este es un texto de marcador de posición. El contenido legal real debe ser redactado por un profesional.</em></p>
+                `
+            },
+            terms: {
+                title: 'Términos de Servicio',
+                content: `
+                    <p class="mb-4">Bienvenido a Nodica. Al utilizar nuestros servicios, aceptas estar sujeto a los siguientes términos y condiciones.</p>
+                    <h4 class="font-bold text-lg mb-2">1. Uso de Nuestros Servicios</h4>
+                    <p class="mb-4">Debes seguir las políticas puestas a tu disposición dentro de los servicios. No uses nuestros servicios de forma indebida. Por ejemplo, no interfieras con nuestros servicios ni intentes acceder a ellos por un método que no sea la interfaz y las instrucciones que te proporcionamos.</p>
+                    <h4 class="font-bold text-lg mb-2">2. Modificación y Terminación de Servicios</h4>
+                    <p class="mb-4">Estamos constantemente cambiando y mejorando nuestros servicios. Podemos agregar o eliminar funcionalidades o características, y podemos suspender o detener un servicio por completo.</p>
+                    <p><em>Este es un texto de marcador de posición. El contenido legal real debe ser redactado por un profesional.</em></p>
+                `
+            }
         }
     },
     en: {
@@ -148,6 +173,7 @@ const translations = {
             publishedBy: 'Published by',
             on: 'on',
             notFound: 'Post not found',
+            notFoundDesc: 'The post you are looking for does not exist or has been moved.',
             backToBlog: 'Back to blog',
             backToAll: 'Back to all posts',
         },
@@ -181,6 +207,30 @@ const translations = {
         },
         common: {
             readMore: 'Read more',
+        },
+        legal: {
+            privacy: {
+                title: 'Privacy Policy',
+                content: `
+                    <p class="mb-4">At Nodica, your privacy is important to us. This policy explains what personal information we collect and how we use it.</p>
+                    <h4 class="font-bold text-lg mb-2">1. Information We Collect</h4>
+                    <p class="mb-4">We collect information you provide directly to us, such as your name and email address when you request a demo. We may also collect technical data automatically, such as your IP address.</p>
+                    <h4 class="font-bold text-lg mb-2">2. How We Use Your Information</h4>
+                    <p class="mb-4">We use your information to contact you, provide our services, and improve our offerings. We do not share your personal information with third parties for marketing purposes.</p>
+                    <p><em>This is a placeholder text. Actual legal content should be drafted by a professional.</em></p>
+                `
+            },
+            terms: {
+                title: 'Terms of Service',
+                content: `
+                    <p class="mb-4">Welcome to Nodica. By using our services, you agree to be bound by the following terms and conditions.</p>
+                    <h4 class="font-bold text-lg mb-2">1. Use of Our Services</h4>
+                    <p class="mb-4">You must follow any policies made available to you within the services. Don’t misuse our services. For example, don’t interfere with our services or try to access them using a method other than the interface and the instructions that we provide.</p>
+                    <h4 class="font-bold text-lg mb-2">2. Modifying and Terminating Our Services</h4>
+                    <p class="mb-4">We are constantly changing and improving our services. We may add or remove functionalities or features, and we may suspend or stop a service altogether.</p>
+                    <p><em>This is a placeholder text. Actual legal content should be drafted by a professional.</em></p>
+                `
+            }
         }
     }
 };

@@ -26,15 +26,15 @@ export const Footer = () => {
                     <div>
                         <h4 class="font-semibold text-lg mb-4">${i18n.t('footer.legal')}</h4>
                         <ul class="space-y-2">
-                            <li><a href="#" class="text-foreground/70 hover:text-foreground">${i18n.t('footer.privacy')}</a></li>
-                            <li><a href="#" class="text-foreground/70 hover:text-foreground">${i18n.t('footer.terms')}</a></li>
+                            <li><a href="#" onclick="event.preventDefault(); NodicaApp.openLegalModal('privacy')" class="text-foreground/70 hover:text-foreground">${i18n.t('footer.privacy')}</a></li>
+                            <li><a href="#" onclick="event.preventDefault(); NodicaApp.openLegalModal('terms')" class="text-foreground/70 hover:text-foreground">${i18n.t('footer.terms')}</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="font-semibold text-lg mb-4">${i18n.t('footer.contact')}</h4>
                         <ul class="space-y-2 text-foreground/70">
-                            <li><p>${i18n.t('footer.email')}</p></li>
-                            <li><p>${i18n.t('footer.phone')}</p></li>
+                            <li><a href="mailto:info@nodica.pro" class="hover:text-foreground transition-colors">${i18n.t('footer.email')}</a></li>
+                            <li><a href="tel:+5218345088993" class="hover:text-foreground transition-colors">${i18n.t('footer.phone')}</a></li>
                         </ul>
                     </div>
                 </div>

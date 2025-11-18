@@ -1,3 +1,4 @@
+
 import { NodicaStore } from './store.js';
 import { NodicaRouter } from './router.js';
 import { NodicaAIService } from './services/aiService.js';
@@ -239,6 +240,22 @@ window.NodicaApp = NodicaApp;
             content: modalContent,
             footer: modalFooter,
             size: '4xl'
+        });
+        
+        openModal(modalId);
+    };
+
+    app.openLegalModal = (type) => {
+        const title = i18n.t(`legal.${type}.title`);
+        const content = i18n.t(`legal.${type}.content`);
+        if (!title || !content) return;
+
+        const modalId = `${type}-modal`;
+        document.getElementById('modal-container').innerHTML = Modal({
+            id: modalId,
+            title: title,
+            content: `<div class="prose dark:prose-invert max-w-none text-foreground/90">${content}</div>`,
+            size: '2xl'
         });
         
         openModal(modalId);
