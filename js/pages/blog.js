@@ -1,17 +1,17 @@
-
 import { NodicaStore } from '../store.js';
 import { BlogPostCard } from '../components/blogPostCard.js';
+import { i18n } from '../i18n.js';
 
 export const BlogPage = () => {
     const posts = NodicaStore.getPosts();
 
     return `
-        <div class="bg-nodica-gray pt-24">
+        <div class="bg-background-secondary pt-24">
             <header class="py-16 text-center">
                 <div class="container mx-auto px-6">
-                    <h1 class="text-4xl md:text-5xl font-bold font-heading text-gray-800 animated-section">Blog de Innovación</h1>
-                    <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto animated-section" style="transition-delay: 0.2s;">
-                        Ideas, tendencias y consejos sobre tecnología para PYMEs.
+                    <h1 class="text-4xl md:text-5xl font-bold font-heading text-foreground animated-section">${i18n.t('blogPage.title')}</h1>
+                    <p class="text-lg text-foreground/80 mt-4 max-w-2xl mx-auto animated-section" style="transition-delay: 0.2s;">
+                        ${i18n.t('blogPage.subtitle')}
                     </p>
                 </div>
             </header>
@@ -26,7 +26,7 @@ export const BlogPage = () => {
                         `).join('')}
                     </div>
                      <div class="text-center mt-12">
-                        <a href="#/admin" class="text-nodica-blue hover:underline">Ir al panel de administración para crear un nuevo post.</a>
+                        <a href="#/admin" class="text-nodica-blue hover:underline">${i18n.t('blogPage.adminLink')}</a>
                     </div>
                 </div>
             </main>

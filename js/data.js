@@ -1,0 +1,371 @@
+
+export const initialData = {
+    es: {
+        services: [
+            { 
+                id: 1, 
+                title: 'Automatización de Procesos (RPA)', 
+                icon: '🤖', 
+                description: 'Optimizamos tus operaciones diarias, reduciendo errores y liberando a tu equipo para tareas de mayor valor.', 
+                details: 'Implementamos Robots de Software (RPA) para automatizar tareas repetitivas como la entrada de datos, generación de informes y procesamiento de facturas. Aumenta la eficiencia y reduce costos operativos.',
+                image: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max',
+                detailsList: [
+                    'Análisis de Procesos de Negocio (BPA).',
+                    'Desarrollo de Robots de Software (RPA) a medida.',
+                    'Automatización de entrada de datos y migraciones.',
+                    'Procesamiento automático de facturas y órdenes de compra.',
+                    'Generación de informes periódicos y personalizados.',
+                    'Integración entre sistemas que no tienen API.'
+                ]
+            },
+            { 
+                id: 2, 
+                title: 'Desarrollo de Aplicaciones a Medida', 
+                icon: '📱', 
+                description: 'Creamos aplicaciones web y móviles que se adaptan perfectamente a las necesidades de tu negocio.', 
+                details: 'Desde CRMs personalizados hasta portales de clientes, construimos soluciones robustas, escalables y seguras que impulsan tu crecimiento.',
+                image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max',
+                detailsList: [
+                    'Aplicaciones Web Progresivas (PWA) y Nativas.',
+                    'Desarrollo de APIs RESTful seguras y escalables.',
+                    'Dashboards y paneles de control en tiempo real.',
+                    'Portales privados para clientes y proveedores.',
+                    'Integración con pasarelas de pago y servicios de terceros.',
+                    'Mantenimiento y soporte evolutivo de aplicaciones.'
+                ]
+            },
+            { 
+                id: 3, 
+                title: 'Soluciones con Inteligencia Artificial', 
+                icon: '🧠', 
+                description: 'Integramos IA para que tomes decisiones más inteligentes y ofrezcas experiencias personalizadas.', 
+                details: 'Desarrollamos chatbots inteligentes, sistemas de recomendación y modelos de análisis predictivo que te dan una ventaja competitiva en el mercado.',
+                image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max',
+                detailsList: [
+                    'Desarrollo e integración de Chatbots conversacionales avanzados.',
+                    'Sistemas de recomendación de productos y contenidos.',
+                    'Análisis de sentimiento para redes sociales y feedback.',
+                    'Modelos de clasificación y predicción (ej. predicción de churn).',
+                    'Procesamiento de Lenguaje Natural (NLP) para análisis de documentos.',
+                    'Visión por computadora para control de calidad y análisis de imágenes.'
+                ]
+            }
+        ],
+        solutions: [
+            {
+                id: 101,
+                category: 'Automatizaciones Inteligentes',
+                title: 'Automatización de Ventas por WhatsApp',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>',
+                description: 'Convierte conversaciones en ventas con un asistente que califica, da seguimiento y cierra por ti.',
+                cardImage: 'https://plus.unsplash.com/premium_photo-1725985758385-d5462d6e7f50?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://plus.unsplash.com/premium_photo-1725985758385-d5462d6e7f50?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop',
+                    description: 'Transformamos tu WhatsApp en una potente herramienta de ventas. Nuestro asistente con IA interactúa con los clientes potenciales, responde sus dudas, califica su interés y los guía hasta el cierre, 24/7.',
+                    challenge: 'Proceso de ventas lento en WhatsApp, resultando en pérdida de leads por demoras en la respuesta.',
+                    solution: 'Aumento de conversiones: 40%\nCalificación de leads: 100% automatizada\nHoras ahorradas: 15+ por semana'
+                }
+            },
+            {
+                id: 102,
+                category: 'Automatizaciones Inteligentes',
+                title: 'Atención Automática a Clientes',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" /></svg>',
+                description: 'Responde preguntas frecuentes 24/7 y libera a tu equipo para tareas de mayor valor.',
+                cardImage: 'https://images.unsplash.com/photo-1685391896546-9abaf50bfc99?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1685391896546-9abaf50bfc99?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'Responde preguntas frecuentes 24/7 y libera a tu equipo para tareas de mayor valor, mejorando la satisfacción del cliente.',
+                    challenge: 'Clientes esperando por respuestas a preguntas comunes, sobrecargando al equipo de soporte.',
+                    solution: 'Reducción de tiempo de respuesta: 90%\nDisponibilidad: 24/7\nSatisfacción del cliente: +30%'
+                }
+            },
+            {
+                id: 103,
+                category: 'Automatizaciones Inteligentes',
+                title: 'Automatización de Citas',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>',
+                description: 'Perfecto para salones, clínicas y consultores. Permite que tus clientes agenden sin intervención humana.',
+                cardImage: 'https://images.unsplash.com/photo-1759143545924-beb85b33c0f1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1759143545924-beb85b33c0f1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'Un sistema de agendamiento inteligente que gestiona tu calendario, envía recordatorios y reduce las ausencias.',
+                    challenge: 'Gestión manual de citas que consume tiempo y es propensa a errores de doble agendamiento.',
+                    solution: 'Reducción de "no-shows": 50%\nHoras administrativas ahorradas: 10+ por semana\nReservas online: Habilitado 24/7'
+                }
+            },
+            {
+                id: 201,
+                category: 'Aplicaciones Personalizadas',
+                title: 'Sistemas Internos a Medida',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>',
+                description: 'Desarrollamos sistemas de inventario, agendas, gestión de pedidos o CRMs personalizados.',
+                cardImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'Creamos herramientas internas que se ajustan como un guante a tus procesos, centralizando información y mejorando la colaboración.',
+                    challenge: 'Procesos ineficientes basados en hojas de cálculo o múltiples herramientas desconectadas entre sí.',
+                    solution: 'Aumento de productividad: 35%\nReducción de errores manuales: 95%\nAcceso centralizado a la información.'
+                }
+            },
+            {
+                id: 202,
+                category: 'Aplicaciones Personalizadas',
+                title: 'Apps para Emprendedores (MVP)',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>',
+                description: 'Validamos y construimos la aplicación que materializa tu idea de negocio de forma rápida y eficiente.',
+                cardImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'Te ayudamos a lanzar un Producto Mínimo Viable (MVP) para validar tu modelo de negocio con usuarios reales, minimizando riesgos y costos.',
+                    challenge: 'Tener una gran idea de app pero no saber por dónde empezar o no tener el capital para un desarrollo completo.',
+                    solution: 'Tiempo de lanzamiento: 6-8 semanas\nCosto reducido vs. desarrollo tradicional\nFeedback real para futuras iteraciones.'
+                }
+            },
+            {
+                id: 203,
+                category: 'Aplicaciones Personalizadas',
+                title: 'Microaplicaciones con IA',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3M5.636 5.636L4.222 4.222m15.556 15.556l-1.414-1.414M4.222 19.778l1.414-1.414m14.142-14.142l-1.414 1.414" /></svg>',
+                description: 'Pequeñas herramientas inteligentes que resuelven un problema específico.',
+                cardImage: 'https://images.unsplash.com/photo-1663153206192-6d0e4c9570dd?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1663153206192-6d0e4c9570dd?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'Desarrollamos pequeñas aplicaciones que usan IA para tareas concretas, como clasificar emails, resumir documentos o analizar feedback de clientes.',
+                    challenge: 'Problemas de negocio muy específicos que las grandes plataformas no resuelven de manera eficiente.',
+                    solution: 'Solución hiper-enfocada\nImplementación rápida\nAutomatización de tareas cognitivas.'
+                }
+            },
+            {
+                id: 301,
+                category: 'Soluciones por Industria',
+                title: 'Restaurantes y Cafeterías',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 3v2c0 1.105-1.005 2-2.222 2H5.222C4.005 7 3 6.105 3 5V3m18 0H3m18 0h-2M3 3H1m18 0H3m18 0V1m0 2v2m-6-4v2c0 1.105-1.005 2-2.222 2h-1.556C8.005 7 7 6.105 7 5V3" /></svg>',
+                description: 'Sistemas de reservas inteligentes, pedidos online y menús digitales con IA.',
+                cardImage: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'Digitaliza la experiencia de tus clientes con menús QR inteligentes, sistemas de pedidos y pagos desde la mesa, y gestión de reservas automatizada.',
+                    challenge: 'Alta competencia y necesidad de optimizar el servicio en horas pico para maximizar ingresos.',
+                    solution: 'Aumento del ticket promedio: 15%\nRotación de mesas más rápida\nMejora en la experiencia del cliente.'
+                }
+            },
+            {
+                id: 302,
+                category: 'Soluciones por Industria',
+                title: 'Salones de Belleza y Spas',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M9 14h6" /></svg>',
+                description: 'Agendas automáticas, recordatorios de citas por WhatsApp y programas de fidelización.',
+                cardImage: 'https://images.unsplash.com/photo-1591174425156-fd472f354be4?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1591174425156-fd472f354be4?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'Un sistema todo-en-uno para gestionar tu agenda, reducir ausencias con recordatorios automáticos y mantener a tus clientes felices con programas de lealtad.',
+                    challenge: 'Pérdida de ingresos por citas no asistidas y dificultad para mantener una comunicación constante con los clientes.',
+                    solution: 'Reducción de "no-shows": 40%\nMayor recurrencia de clientes\nAgenda online disponible 24/7.'
+                }
+            },
+            {
+                id: 303,
+                category: 'Soluciones por Industria',
+                title: 'Tiendas Online (E-commerce)',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>',
+                description: 'Atención al cliente por IA, recuperación de carritos abandonados e inventario sincronizado.',
+                cardImage: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'Potencia tu e-commerce con un asistente de IA que recomienda productos, resuelve dudas 24/7 y automatiza la recuperación de carritos abandonados.',
+                    challenge: 'Altas tasas de abandono de carrito y dificultad para ofrecer soporte inmediato a los compradores online.',
+                    solution: 'Tasa de recuperación de carritos: +20%\nAumento de la conversión\nSoporte al cliente instantáneo.'
+                }
+            }
+        ],
+        posts: [
+            { id: 1, title: '5 Mitos sobre la Automatización en PYMEs', author: 'Ana Torres', date: '2023-10-15', image: 'https://images.unsplash.com/photo-1611117775522-5a3a4115f1ce?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop', excerpt: 'Descubre por qué la automatización no es solo para grandes corporaciones y cómo puede beneficiar a tu pequeña o mediana empresa.', content: '<p>La automatización ha dejado de ser un lujo para convertirse en una necesidad competitiva. Sin embargo, muchos dueños de PYMEs aún creen en mitos que les impiden dar el salto. En este artículo, desmentimos los 5 más comunes.</p><h3>Mito 1: Es demasiado caro</h3><p>Falso. Con soluciones de RPA y herramientas en la nube, la inversión inicial es más baja que nunca y el retorno de inversión se ve en pocos meses.</p><h3>Mito 2: Reemplazará a mis empleados</h3><p>La automatización no busca reemplazar, sino potenciar. Libera a tu equipo de tareas monótonas para que puedan enfocarse en la estrategia, la creatividad y la atención al cliente, áreas donde el talento humano es insustituible.</p><p>...</p>' },
+            { id: 2, title: 'Cómo la IA está cambiando el Servicio al Cliente', author: 'Carlos Vega', date: '2023-11-02', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop', excerpt: 'Los chatbots y el análisis de sentimiento están revolucionando la forma en que las empresas interactúan con sus clientes.', content: '<p>La Inteligencia Artificial está transformando el servicio al cliente, ofreciendo respuestas instantáneas 24/7 y personalizando la comunicación a una escala sin precedentes. Los chatbots, por ejemplo, pueden resolver el 80% de las consultas comunes de forma inmediata.</p><p>Además, el análisis de sentimiento permite a las empresas monitorear la satisfacción del cliente en tiempo real a través de redes sociales y encuestas, identificando problemas antes de que escalen. Esto no solo mejora la experiencia del cliente, sino que también optimiza los recursos del equipo de soporte.</p>' }
+        ]
+    },
+    en: {
+        services: [
+            {
+                id: 1,
+                title: 'Process Automation (RPA)',
+                icon: '🤖',
+                description: 'We optimize your daily operations, reducing errors and freeing up your team for higher-value tasks.',
+                details: 'We implement Software Robots (RPA) to automate repetitive tasks like data entry, report generation, and invoice processing. Increase efficiency and reduce operational costs.',
+                image: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max',
+                detailsList: [
+                    'Business Process Analysis (BPA).',
+                    'Custom Software Robot (RPA) Development.',
+                    'Data entry and migration automation.',
+                    'Automatic processing of invoices and purchase orders.',
+                    'Periodic and personalized report generation.',
+                    'Integration between systems that lack an API.'
+                ]
+            },
+            {
+                id: 2,
+                title: 'Custom Application Development',
+                icon: '📱',
+                description: 'We create web and mobile applications that perfectly fit the needs of your business.',
+                details: 'From custom CRMs to client portals, we build robust, scalable, and secure solutions that drive your growth.',
+                image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max',
+                detailsList: [
+                    'Progressive Web Apps (PWA) and Native Applications.',
+                    'Development of secure and scalable RESTful APIs.',
+                    'Real-time dashboards and control panels.',
+                    'Private portals for clients and suppliers.',
+                    'Integration with payment gateways and third-party services.',
+                    'Application maintenance and evolutionary support.'
+                ]
+            },
+            {
+                id: 3,
+                title: 'Artificial Intelligence Solutions',
+                icon: '🧠',
+                description: 'We integrate AI for smarter decision-making and personalized customer experiences.',
+                details: 'We develop intelligent chatbots, recommendation systems, and predictive analysis models that give you a competitive edge in the market.',
+                image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max',
+                detailsList: [
+                    'Development and integration of advanced conversational Chatbots.',
+                    'Product and content recommendation systems.',
+                    'Sentiment analysis for social media and feedback.',
+                    'Classification and prediction models (e.g., churn prediction).',
+                    'Natural Language Processing (NLP) for document analysis.',
+                    'Computer vision for quality control and image analysis.'
+                ]
+            }
+        ],
+        solutions: [
+            {
+                id: 101,
+                category: 'Intelligent Automations',
+                title: 'WhatsApp Sales Automation',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>',
+                description: 'Turn conversations into sales with an assistant that qualifies, follows up, and closes for you.',
+                cardImage: 'https://plus.unsplash.com/premium_photo-1725985758385-d5462d6e7f50?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://plus.unsplash.com/premium_photo-1725985758385-d5462d6e7f50?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop',
+                    description: 'We transform your WhatsApp into a powerful sales tool. Our AI assistant interacts with potential customers, answers their questions, qualifies their interest, and guides them to closing, 24/7.',
+                    challenge: 'Slow sales process on WhatsApp, resulting in lost leads due to response delays.',
+                    solution: 'Conversion increase: 40%\nLead qualification: 100% automated\nHours saved: 15+ per week'
+                }
+            },
+            {
+                id: 102,
+                category: 'Intelligent Automations',
+                title: 'Automated Customer Support',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" /></svg>',
+                description: 'Answer frequently asked questions 24/7 and free up your team for higher-value tasks.',
+                cardImage: 'https://images.unsplash.com/photo-1685391896546-9abaf50bfc99?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1685391896546-9abaf50bfc99?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'Answer frequently asked questions 24/7 and free up your team for higher-value tasks, improving customer satisfaction.',
+                    challenge: 'Customers waiting for answers to common questions, overloading the support team.',
+                    solution: 'Response time reduction: 90%\nAvailability: 24/7\nCustomer satisfaction: +30%'
+                }
+            },
+            {
+                id: 103,
+                category: 'Intelligent Automations',
+                title: 'Appointment Automation',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>',
+                description: 'Perfect for salons, clinics, and consultants. Let your clients book without human intervention.',
+                cardImage: 'https://images.unsplash.com/photo-1759143545924-beb85b33c0f1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1759143545924-beb85b33c0f1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'An intelligent scheduling system that manages your calendar, sends reminders, and reduces no-shows.',
+                    challenge: 'Manual appointment management that consumes time and is prone to double-booking errors.',
+                    solution: 'Reduction in "no-shows": 50%\nAdministrative hours saved: 10+ per week\nOnline booking: Enabled 24/7'
+                }
+            },
+            {
+                id: 201,
+                category: 'Custom Applications',
+                title: 'Custom Internal Systems',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>',
+                description: 'We develop custom inventory, scheduling, order management systems, or personalized CRMs.',
+                cardImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'We create internal tools that fit your processes like a glove, centralizing information and improving collaboration.',
+                    challenge: 'Inefficient processes based on spreadsheets or multiple disconnected tools.',
+                    solution: 'Productivity increase: 35%\nReduction of manual errors: 95%\nCentralized access to information.'
+                }
+            },
+            {
+                id: 202,
+                category: 'Custom Applications',
+                title: 'Apps for Entrepreneurs (MVP)',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>',
+                description: 'We validate and build the application that brings your business idea to life quickly and efficiently.',
+                cardImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'We help you launch a Minimum Viable Product (MVP) to validate your business model with real users, minimizing risks and costs.',
+                    challenge: 'Having a great app idea but not knowing where to start or lacking the capital for full development.',
+                    solution: 'Launch time: 6-8 weeks\nReduced cost vs. traditional development\nReal feedback for future iterations.'
+                }
+            },
+            {
+                id: 203,
+                category: 'Custom Applications',
+                title: 'AI-Powered Micro-Apps',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3M5.636 5.636L4.222 4.222m15.556 15.556l-1.414-1.414M4.222 19.778l1.414-1.414m14.142-14.142l-1.414 1.414" /></svg>',
+                description: 'Small, intelligent tools that solve a specific problem.',
+                cardImage: 'https://images.unsplash.com/photo-1663153206192-6d0e4c9570dd?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1663153206192-6d0e4c9570dd?q=80&w=627&auto=format&fit=crop&ixlib-rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'We develop small applications that use AI for specific tasks, like classifying emails, summarizing documents, or analyzing customer feedback.',
+                    challenge: 'Very specific business problems that large platforms do not solve efficiently.',
+                    solution: 'Hyper-focused solution\nRapid implementation\nAutomation of cognitive tasks.'
+                }
+            },
+            {
+                id: 301,
+                category: 'Industry Solutions',
+                title: 'Restaurants & Cafes',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 3v2c0 1.105-1.005 2-2.222 2H5.222C4.005 7 3 6.105 3 5V3m18 0H3m18 0h-2M3 3H1m18 0H3m18 0V1m0 2v2m-6-4v2c0 1.105-1.005 2-2.222 2h-1.556C8.005 7 7 6.105 7 5V3" /></svg>',
+                description: 'Intelligent reservation systems, online ordering, and AI-powered digital menus.',
+                cardImage: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'Digitize your customer experience with smart QR menus, table-side ordering and payment systems, and automated reservation management.',
+                    challenge: 'High competition and the need to optimize service during peak hours to maximize revenue.',
+                    solution: 'Increase in average ticket size: 15%\nFaster table turnover\nImproved customer experience.'
+                }
+            },
+            {
+                id: 302,
+                category: 'Industry Solutions',
+                title: 'Beauty Salons & Spas',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M9 14h6" /></svg>',
+                description: 'Automated scheduling, WhatsApp appointment reminders, and loyalty programs.',
+                cardImage: 'https://images.unsplash.com/photo-1591174425156-fd472f354be4?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1591174425156-fd472f354be4?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'An all-in-one system to manage your schedule, reduce no-shows with automatic reminders, and keep your clients happy with loyalty programs.',
+                    challenge: 'Loss of revenue from no-show appointments and difficulty maintaining constant communication with clients.',
+                    solution: 'Reduction in "no-shows": 40%\nHigher customer retention\nOnline booking available 24/7.'
+                }
+            },
+            {
+                id: 303,
+                category: 'Industry Solutions',
+                title: 'Online Stores (E-commerce)',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-nodica-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>',
+                description: 'AI customer support, abandoned cart recovery, and synchronized inventory.',
+                cardImage: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=800&auto=format&fit=crop',
+                modal: {
+                    image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=600&fit=crop',
+                    description: 'Boost your e-commerce with an AI assistant that recommends products, answers questions 24/7, and automates abandoned cart recovery.',
+                    challenge: 'High cart abandonment rates and difficulty providing immediate support to online shoppers.',
+                    solution: 'Cart recovery rate: +20%\nIncreased conversion rate\nInstant customer support.'
+                }
+            }
+        ],
+        posts: [
+            { id: 1, title: '5 Myths About Automation in SMEs', author: 'Ana Torres', date: '2023-10-15', image: 'https://images.unsplash.com/photo-1611117775522-5a3a4115f1ce?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop', excerpt: 'Discover why automation isn\'t just for large corporations and how it can benefit your small or medium-sized business.', content: '<p>Automation has evolved from a luxury to a competitive necessity. However, many SME owners still believe in myths that prevent them from making the leap. In this article, we debunk the 5 most common ones.</p><h3>Myth 1: It\'s too expensive</h3><p>False. With RPA solutions and cloud-based tools, the initial investment is lower than ever, and the return on investment is seen in just a few months.</p><h3>Myth 2: It will replace my employees</h3><p>Automation doesn\'t seek to replace, but to empower. It frees your team from monotonous tasks so they can focus on strategy, creativity, and customer service—areas where human talent is irreplaceable.</p><p>...</p>' },
+            { id: 2, title: 'How AI is Changing Customer Service', author: 'Carlos Vega', date: '2023-11-02', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=400&fit=crop', excerpt: 'Chatbots and sentiment analysis are revolutionizing how businesses interact with their customers.', content: '<p>Artificial Intelligence is transforming customer service, offering instant 24/7 responses and personalizing communication on an unprecedented scale. Chatbots, for example, can resolve 80% of common inquiries immediately.</p><p>Furthermore, sentiment analysis allows companies to monitor customer satisfaction in real-time across social media and surveys, identifying issues before they escalate. This not only improves the customer experience but also optimizes the resources of the support team.</p>' }
+        ]
+    }
+};

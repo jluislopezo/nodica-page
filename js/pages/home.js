@@ -1,15 +1,14 @@
-
-
 import { NodicaStore } from '../store.js';
 import { Button } from '../components/button.js';
 import { ServiceCard } from '../components/serviceCard.js';
+import { i18n } from '../i18n.js';
 
 export const HomePage = () => {
     const services = NodicaStore.getServices();
     const solutions = NodicaStore.getSolutions();
     const testimonials = [
-        { name: 'Lucía Mendoza', company: 'CEO de CreceMás', quote: 'Nodica transformó nuestra operación. La automatización de facturas nos ahorró 20 horas a la semana.', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&q=80&fm=jpg&crop=face&cs=tinysrgb&w=150&h=150&fit=crop' },
-        { name: 'Javier Ríos', company: 'Director de Logística', quote: 'La app a medida que desarrollaron es el núcleo de nuestra logística. Intuitiva, rápida y fiable.', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&q=80&fm=jpg&crop=face&cs=tinysrgb&w=150&h=150&fit=crop' }
+        { name: 'Lucía Mendoza', company: 'CEO de CreceMás', quote: i18n.t('home.testimonial1'), avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&q=80&fm=jpg&crop=face&cs=tinysrgb&w=150&h=150&fit=crop' },
+        { name: 'Javier Ríos', company: 'Director de Logística', quote: i18n.t('home.testimonial2'), avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&q=80&fm=jpg&crop=face&cs=tinysrgb&w=150&h=150&fit=crop' }
     ];
 
     const solutionsByCategory = solutions.reduce((acc, solution) => {
@@ -18,36 +17,36 @@ export const HomePage = () => {
     }, {});
 
     const SolutionCard = (solution) => `
-        <div class="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col overflow-hidden" onclick="NodicaApp.openSolutionModal(${solution.id})">
+        <div class="bg-card rounded-xl shadow-sm border border-border/20 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col overflow-hidden" onclick="NodicaApp.openSolutionModal(${solution.id})">
             <img src="${solution.cardImage}" alt="${solution.title}" class="w-full h-32 object-cover">
             <div class="p-6 flex flex-col flex-grow">
                 <div class="flex items-center mb-4">
-                    <div class="bg-nodica-gray p-3 rounded-full mr-4 flex-shrink-0">
+                    <div class="bg-background-secondary p-3 rounded-full mr-4 flex-shrink-0">
                        ${solution.icon}
                     </div>
-                    <h3 class="text-md font-bold font-heading text-gray-900 flex-1">${solution.title}</h3>
+                    <h3 class="text-md font-bold font-heading text-foreground flex-1">${solution.title}</h3>
                 </div>
-                <p class="text-gray-600 font-body text-sm flex-grow">${solution.description}</p>
+                <p class="text-foreground/80 font-body text-sm flex-grow">${solution.description}</p>
             </div>
         </div>
     `;
 
     return `
-        <div id="hero-section" class="pt-32 pb-20 bg-nodica-gray text-center">
+        <div id="hero-section" class="pt-32 pb-20 bg-background text-center">
             <div class="container mx-auto px-6">
-                <h1 class="text-4xl md:text-6xl font-bold font-heading text-gray-800 mb-4 animated-section">Automatiza. Conecta. Crece.</h1>
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 animated-section" style="transition-delay: 0.2s;">Ayudamos a las PYMEs a alcanzar su máximo potencial con soluciones tecnológicas inteligentes y a medida.</p>
+                <h1 class="text-4xl md:text-6xl font-bold font-heading text-foreground mb-4 animated-section">${i18n.t('home.heroTitle')}</h1>
+                <p class="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-8 animated-section" style="transition-delay: 0.2s;">${i18n.t('home.heroSubtitle')}</p>
                 <div class="animated-section" style="transition-delay: 0.4s;">
-                    ${Button({ text: 'Solicitar Diagnóstico Gratis', variant: 'primary', onClick: 'NodicaApp.openDemoModal()' })}
+                    ${Button({ text: i18n.t('home.heroButton'), variant: 'primary', onClick: 'NodicaApp.openDemoModal()' })}
                 </div>
             </div>
         </div>
 
-        <section id="services-section" class="py-20 bg-white">
+        <section id="services-section" class="py-20 bg-background">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 animated-section">
-                    <h2 class="text-3xl md:text-4xl font-bold font-heading">Capacidades Principales</h2>
-                    <p class="text-gray-600 mt-2">Nuestras tres áreas de especialización para impulsar tu negocio.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold font-heading">${i18n.t('home.servicesTitle')}</h2>
+                    <p class="text-foreground/80 mt-2">${i18n.t('home.servicesSubtitle')}</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     ${services.map((service, index) => `
@@ -59,11 +58,11 @@ export const HomePage = () => {
             </div>
         </section>
 
-        <section id="solutions-section" class="py-20 bg-nodica-gray">
+        <section id="solutions-section" class="py-20 bg-background-secondary">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 animated-section">
-                    <h2 class="text-3xl md:text-4xl font-bold font-heading">Nuestras Soluciones Clave</h2>
-                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Creamos sistemas que trabajan para ti, 24/7. Haz clic en una tarjeta para ver más.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold font-heading">${i18n.t('home.solutionsTitle')}</h2>
+                    <p class="text-foreground/80 mt-2 max-w-2xl mx-auto">${i18n.t('home.solutionsSubtitle')}</p>
                 </div>
 
                 ${Object.entries(solutionsByCategory).map(([category, solutionsInCategory], categoryIndex) => `
@@ -80,46 +79,46 @@ export const HomePage = () => {
             </div>
         </section>
 
-        <section id="benefits-section" class="py-20 bg-white">
+        <section id="benefits-section" class="py-20 bg-background">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 animated-section">
-                    <h2 class="text-3xl md:text-4xl font-bold font-heading">¿Por qué Nodica?</h2>
-                    <p class="text-gray-600 mt-2">Tu socio tecnológico para un crecimiento sostenible.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold font-heading">${i18n.t('home.benefitsTitle')}</h2>
+                    <p class="text-foreground/80 mt-2">${i18n.t('home.benefitsSubtitle')}</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8 text-center">
                     <div class="animated-section" style="transition-delay: 0s;">
                         <div class="bg-nodica-blue text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl">✓</div>
-                        <h3 class="text-xl font-bold mb-2">Más Eficiencia</h3>
-                        <p>Reduce costos y tiempos operativos hasta en un 70%.</p>
+                        <h3 class="text-xl font-bold mb-2">${i18n.t('home.benefit1Title')}</h3>
+                        <p>${i18n.t('home.benefit1Desc')}</p>
                     </div>
                     <div class="animated-section" style="transition-delay: 0.2s;">
                          <div class="bg-nodica-blue text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl">💡</div>
-                        <h3 class="text-xl font-bold mb-2">Mejores Decisiones</h3>
-                        <p>Utiliza datos e IA para tomar decisiones estratégicas informadas.</p>
+                        <h3 class="text-xl font-bold mb-2">${i18n.t('home.benefit2Title')}</h3>
+                        <p>${i18n.t('home.benefit2Desc')}</p>
                     </div>
                     <div class="animated-section" style="transition-delay: 0.4s;">
                         <div class="bg-nodica-blue text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl">🚀</div>
-                        <h3 class="text-xl font-bold mb-2">Escalabilidad</h3>
-                        <p>Tecnología que crece contigo y se adapta a tus necesidades futuras.</p>
+                        <h3 class="text-xl font-bold mb-2">${i18n.t('home.benefit3Title')}</h3>
+                        <p>${i18n.t('home.benefit3Desc')}</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="testimonials-section" class="py-20 bg-nodica-gray">
+        <section id="testimonials-section" class="py-20 bg-background-secondary">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 animated-section">
-                    <h2 class="text-3xl md:text-4xl font-bold font-heading">Lo que dicen nuestros clientes</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold font-heading">${i18n.t('home.testimonialsTitle')}</h2>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8">
                     ${testimonials.map((t, index) => `
-                        <div class="bg-white p-8 rounded-lg shadow-lg animated-section" style="transition-delay: ${index * 0.2}s;">
-                            <p class="text-gray-600 italic mb-4">"${t.quote}"</p>
+                        <div class="bg-card p-8 rounded-lg shadow-lg animated-section border border-border/20" style="transition-delay: ${index * 0.2}s;">
+                            <p class="text-foreground/80 italic mb-4">"${t.quote}"</p>
                             <div class="flex items-center">
                                 <img src="${t.avatar}" class="w-12 h-12 rounded-full mr-4 object-cover" alt="${t.name}">
                                 <div>
                                     <p class="font-bold">${t.name}</p>
-                                    <p class="text-sm text-gray-500">${t.company}</p>
+                                    <p class="text-sm text-foreground/60">${t.company}</p>
                                 </div>
                             </div>
                         </div>
@@ -130,9 +129,9 @@ export const HomePage = () => {
 
         <section class="bg-nodica-blue text-white text-center py-20">
             <div class="container mx-auto px-6 animated-section">
-                <h2 class="text-3xl font-bold mb-4">¿Listo para transformar tu negocio?</h2>
-                <p class="mb-8 max-w-2xl mx-auto">Hablemos de tus desafíos y exploremos juntos cómo la tecnología puede ser tu mayor aliado.</p>
-                ${Button({ text: 'Inicia tu Transformación', variant: 'secondary', onClick: 'NodicaApp.openDemoModal()' })}
+                <h2 class="text-3xl font-bold mb-4">${i18n.t('home.ctaTitle')}</h2>
+                <p class="mb-8 max-w-2xl mx-auto">${i18n.t('home.ctaSubtitle')}</p>
+                ${Button({ text: i18n.t('home.ctaButton'), variant: 'secondary', onClick: 'NodicaApp.openDemoModal()' })}
             </div>
         </section>
     `;

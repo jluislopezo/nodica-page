@@ -1,4 +1,6 @@
 
+import { i18n } from '../i18n.js';
+
 // This is a placeholder function that simulates a more intelligent conversation flow.
 // In a real application, this logic might exist on a backend that calls the Gemini API.
 // IMPORTANT: Never expose API keys on the client-side.
@@ -25,32 +27,34 @@ async function getAIResponse(messages, serviceContext) {
 
     const lastUserMessage = messages.length > 0 ? messages[messages.length - 1].content.toLowerCase() : "";
     
-    // Check if the assistant has already confirmed receiving an email.
-    // This is our way of tracking the conversation state.
+    const successKeyword = i18n.getLang() === 'es' ? '¡Perfecto! Hemos recibido tu email.' : 'Perfect! We have received your email.';
+
     const isEmailCollected = messages.some(msg => 
-        msg.role === 'assistant' && msg.content.includes('¡Perfecto! Hemos recibido tu email.')
+        msg.role === 'assistant' && msg.content.includes(successKeyword)
     );
 
     let responseText;
+    const lang = i18n.getLang();
 
     if (!isEmailCollected) {
-        // If we haven't collected an email, we validate the user's input.
         if (isValidEmail(lastUserMessage)) {
-            responseText = "¡Perfecto! Hemos recibido tu email. Un especialista se pondrá en contacto contigo en las próximas 24 horas. Mientras tanto, ¿tienes alguna pregunta sobre lo que hacemos o cómo podemos ayudarte a crecer?";
+            responseText = i18n.t('aiService.emailSuccess');
         } else {
-            // If the input is not a valid email, we gently ask again.
-            responseText = "Mmm, parece que eso no es un correo electrónico válido. Para poder continuar y ofrecerte una demo personalizada, ¿podrías intentarlo de nuevo, por favor? Solo necesito tu email.";
+            responseText = i18n.t('aiService.emailInvalid');
         }
     } else {
-        // Once the email is collected, the conversation becomes more open.
-        if (lastUserMessage.includes('precio') || lastUserMessage.includes('costo')) {
-            responseText = "Entiendo tu pregunta sobre los precios. Cada solución que creamos es única y se adapta a las necesidades del cliente, por lo que los costos varían. Pero no te preocupes, el especialista que te contactará podrá darte una cotización detallada y sin compromiso. ¿Hay algo más que te gustaría saber?";
-        } else if (lastUserMessage.includes('gracias')) {
-            responseText = "¡De nada! Ha sido un placer conversar contigo. Si tienes más dudas, aquí estaré para ayudarte. ¡Que tengas un excelente día!";
-        } else if (lastUserMessage.includes('servicios')) {
-            responseText = "Ofrecemos principalmente Automatización de Procesos (RPA), Desarrollo de Aplicaciones a Medida, e implementación de soluciones con Inteligencia Artificial. ¿Te gustaría que te diera más detalles sobre alguno en particular?";
+        const priceKeywords = lang === 'es' ? ['precio', 'costo'] : ['price', 'cost'];
+        const thanksKeywords = lang === 'es' ? ['gracias'] : ['thank', 'thanks'];
+        const servicesKeywords = lang === 'es' ? ['servicios'] : ['services'];
+
+        if (priceKeywords.some(kw => lastUserMessage.includes(kw))) {
+            responseText = i18n.t('aiService.priceQuery');
+        } else if (thanksKeywords.some(kw => lastUserMessage.includes(kw))) {
+            responseText = i18n.t('aiService.thanks');
+        } else if (servicesKeywords.some(kw => lastUserMessage.includes(kw))) {
+            responseText = i18n.t('aiService.servicesQuery');
         } else {
-            responseText = "Es una pregunta muy interesante. Nuestro especialista podrá darte todos los detalles al respecto en la llamada. ¿Hay alguna otra duda que pueda resolverte ahora mismo?";
+            responseText = i18n.t('aiService.fallback');
         }
     }
 
