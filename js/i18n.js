@@ -17,7 +17,7 @@ const translations = {
             terms: 'Términos de Servicio',
             contact: 'Contacto',
             email: 'Email: info@nodica.pro',
-            phone: 'Teléfono: +123 456 7890',
+            phone: 'Teléfono: +52 1 834 508 8993',
             rights: 'Todos los derechos reservados.',
         },
         home: {
@@ -108,7 +108,7 @@ const translations = {
             terms: 'Terms of Service',
             contact: 'Contact',
             email: 'Email: info@nodica.pro',
-            phone: 'Phone: +123 456 7890',
+            phone: 'Phone: +52 1 834 508 8993',
             rights: 'All rights reserved.',
         },
         home: {
@@ -185,7 +185,22 @@ const translations = {
     }
 };
 
-let currentLang = localStorage.getItem('nodica_lang') || 'es';
+const getInitialLang = () => {
+    const storedLang = localStorage.getItem('nodica_lang');
+    if (storedLang && ['es', 'en'].includes(storedLang)) {
+        return storedLang;
+    }
+
+    const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    if (browserLang.startsWith('es')) {
+        return 'es';
+    }
+
+    // Default to English if no reference is found or browser lang is not Spanish
+    return 'en';
+};
+
+let currentLang = getInitialLang();
 
 const getLang = () => currentLang;
 
@@ -207,9 +222,9 @@ const t = (key) => {
         return result;
     }
 
-    // Fallback to Spanish if key not found in current language
-    console.warn(`Translation not found for key: ${key} in lang: ${currentLang}. Falling back.`);
-    let fallback = translations.es;
+    // Fallback to English if key not found in current language
+    console.warn(`Translation not found for key: ${key} in lang: ${currentLang}. Falling back to English.`);
+    let fallback = translations.en;
     for (const k of keys) {
         fallback = fallback ? fallback[k] : undefined;
     }
