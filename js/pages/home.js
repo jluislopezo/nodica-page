@@ -32,10 +32,15 @@ export const HomePage = () => {
     `;
 
     return `
-        <div id="hero-section" class="pt-32 pb-20 bg-background text-center">
-            <div class="container mx-auto px-6">
-                <h1 class="text-4xl md:text-6xl font-bold font-heading text-foreground mb-4 animated-section">${i18n.t('home.heroTitle')}</h1>
-                <p class="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-8 animated-section" style="transition-delay: 0.2s;">${i18n.t('home.heroSubtitle')}</p>
+        <div id="hero-section" class="relative h-screen -mt-16 flex items-center justify-center text-center overflow-hidden">
+            <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute top-0 left-0 w-full h-full bg-black/60 z-10"></div>
+            <div class="container mx-auto px-6 relative z-20">
+                <h1 class="text-4xl md:text-6xl font-bold font-heading text-white mb-4 animated-section" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">${i18n.t('home.heroTitle')}</h1>
+                <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 animated-section" style="transition-delay: 0.2s;">${i18n.t('home.heroSubtitle')}</p>
                 <div class="animated-section" style="transition-delay: 0.4s;">
                     ${Button({ text: i18n.t('home.heroButton'), variant: 'primary', onClick: 'NodicaApp.openDemoModal()' })}
                 </div>

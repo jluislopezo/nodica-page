@@ -21,8 +21,8 @@ const translations = {
             rights: 'Todos los derechos reservados.',
         },
         home: {
-            heroTitle: 'Automatiza. Conecta. Crece.',
-            heroSubtitle: 'Ayudamos a las PYMEs a alcanzar su máximo potencial con soluciones tecnológicas inteligentes y a medida.',
+            heroTitle: 'Automatización inteligente para empresas que quieren crecer.',
+            heroSubtitle: 'Menos tareas repetitivas, más ventas y productividad.',
             heroButton: 'Solicitar Diagnóstico Gratis',
             servicesTitle: 'Capacidades Principales',
             servicesSubtitle: 'Nuestras tres áreas de especialización para impulsar tu negocio.',
@@ -112,8 +112,8 @@ const translations = {
             rights: 'All rights reserved.',
         },
         home: {
-            heroTitle: 'Automate. Connect. Grow.',
-            heroSubtitle: 'We help SMEs reach their full potential with smart, tailor-made technology solutions.',
+            heroTitle: 'Intelligent automation for businesses that want to grow.',
+            heroSubtitle: 'Fewer repetitive tasks, more sales and productivity.',
             heroButton: 'Request Free Diagnosis',
             servicesTitle: 'Core Capabilities',
             servicesSubtitle: 'Our three areas of expertise to boost your business.',
